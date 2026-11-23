@@ -1,0 +1,256 @@
+import type { ServiceId } from '../data/services'
+
+interface ServiceText {
+  title: string
+  desc: string
+  features: string[]
+  problem: string
+  solution: string
+  benefit: string
+  /** 6 workflow steps, same order as flowIcons in data/services.ts */
+  flow: string[]
+}
+
+export const en = {
+  meta: { title: 'Autoone | AI Automation & Smart Systems for Businesses' },
+  skip: 'Skip to content',
+  nav: {
+    services: 'Services', how: 'How we work', why: 'Why Autoone', who: 'Who we help', team: 'Team',
+    tech: 'Technology', faq: 'FAQ', support: 'Support', contact: 'Contact', cta: 'Start your project',
+    menu: 'Menu', close: 'Close', lang: 'العربية',
+  },
+  hero: {
+    badge: 'AI automation & smart systems',
+    l1: 'Your Business.', l2: 'Automated.',
+    sub: 'We build intelligent systems that automate your business, simplify operations, and help you grow.',
+    cta1: 'Explore Our Services', cta2: 'Start Your Project',
+    bubble: 'Hi! I am your Autoone guide. Let me show you how your work can run itself.',
+    chips: ['AI call center', 'Chatbots', 'Smart booking', 'Workflow automation'],
+  },
+  services: {
+    eyebrow: 'What we build', title: 'Smart Solutions. Real Results.',
+    sub: 'Six ways we take repetitive work off your team and put intelligent systems in its place.',
+    learn: 'Learn more', pick: 'Pick any service and I will show you how it works.',
+    explorerEyebrow: 'See it in action', featuresTitle: 'What is included', problemTitle: 'The problem',
+    solutionTitle: 'The automated solution', benefitTitle: 'The result', flowTitle: 'How a request flows',
+    replay: 'Replay', cta: 'Ask about this service',
+    items: {
+      call: {
+        title: 'AI Call Center',
+        desc: 'Automate customer calls, answer frequently asked questions, handle inquiries, and provide intelligent customer support around the clock.',
+        features: ['Automated incoming calls', 'Intelligent voice responses', 'Customer inquiries', 'Call routing', 'Appointment handling', '24/7 availability where configured'],
+        problem: 'Calls go unanswered after hours, and your team repeats the same answers all day.',
+        solution: 'An AI voice agent picks up every call, answers common questions, routes complex ones to the right person and books appointments.',
+        benefit: 'No missed calls, shorter waits for customers, and a team free for work that needs people.',
+        flow: ['Customer calls', 'AI understands the request', 'System checks your information', 'AI answers by voice', 'Call and details are saved', 'Your team is notified when needed'],
+      },
+      assistant: {
+        title: 'AI Personal Assistant',
+        desc: 'An intelligent assistant that manages tasks, organizes information, helps your team, and simplifies daily operations.',
+        features: ['Task management', 'Smart reminders', 'Information retrieval', 'Scheduling', 'Personal and business assistance', 'Workflow integrations'],
+        problem: 'Tasks, reminders and information are scattered across chats, notes and files.',
+        solution: 'One assistant keeps tasks, schedules and company knowledge together, and acts when you ask.',
+        benefit: 'Less searching, fewer forgotten tasks and a calmer working day.',
+        flow: ['You send a request', 'Assistant understands it', 'It finds the information', 'It creates the task or reminder', 'It confirms with you', 'Your tools stay in sync'],
+      },
+      booking: {
+        title: 'Smart Booking',
+        desc: 'Let customers book appointments automatically while your system manages availability, confirmations, reminders, and scheduling.',
+        features: ['Automated booking', 'Calendar synchronization', 'Appointment reminders', 'Booking confirmation', 'Cancellation handling', 'Availability management'],
+        problem: 'Booking by phone and messages causes double bookings, no-shows and constant back and forth.',
+        solution: 'Customers pick a free slot, receive a confirmation and reminders, and your calendar updates itself.',
+        benefit: 'Fewer no-shows and no manual scheduling.',
+        flow: ['Customer picks a time', 'System checks availability', 'Booking is confirmed', 'Calendar is updated', 'Reminder is sent', 'Changes are handled automatically'],
+      },
+      chatbot: {
+        title: 'AI Chatbots',
+        desc: 'Smart conversational agents for your website, WhatsApp, and digital platforms that respond to customers and guide them through their requests.',
+        features: ['Website chatbots', 'WhatsApp integration', 'Customer support', 'Lead collection', 'FAQs', 'Smart conversation flows'],
+        problem: 'Customers write at all hours and wait for answers, and interested leads get lost.',
+        solution: 'A chatbot answers on your website and WhatsApp, collects lead details and hands over to your team when needed.',
+        benefit: 'Instant replies and no lost leads.',
+        flow: ['Customer sends a message', 'AI analyzes the request', 'System retrieves the required information', 'AI responds', 'Request is saved', 'Business team receives a notification'],
+      },
+      systems: {
+        title: 'Smart Systems',
+        desc: 'We design connected digital systems that bring your business operations, tools, and data together into one intelligent workflow.',
+        features: ['Custom business systems', 'CRM integrations', 'Data management', 'System integrations', 'Smart dashboards', 'Business process optimization'],
+        problem: 'Your tools do not talk to each other, so data is copied by hand and reports arrive late.',
+        solution: 'We connect your tools into one system with a single source of truth and live dashboards.',
+        benefit: 'One clear view of your business and no double entry.',
+        flow: ['Data enters any tool', 'System validates it', 'CRM and records update', 'Business rules run automatically', 'Dashboards refresh', 'Your team sees one truth'],
+      },
+      automation: {
+        title: 'Business Automation',
+        desc: 'Automate repetitive tasks, connect your applications, and create workflows that save time and reduce human error.',
+        features: ['Workflow automation', 'App integrations', 'Automated notifications', 'Data processing', 'Reporting', 'AI-powered workflows'],
+        problem: 'Repetitive tasks eat hours every week and cause avoidable mistakes.',
+        solution: 'Workflows move data, send messages and build reports on their own, with AI where judgement is needed.',
+        benefit: 'Hours saved every week and fewer errors.',
+        flow: ['An event happens', 'The workflow starts', 'Data is processed', 'AI helps decide', 'Your apps are updated', 'A report or alert is sent'],
+      },
+    } as Record<ServiceId, ServiceText>,
+  },
+  how: {
+    eyebrow: 'How we work', title: 'From Problem to Intelligent Solution.',
+    sub: 'A clear five-step path. You see progress early and stay in control.',
+    steps: [
+      { t: 'Discover', d: 'Understand your business, challenges, and goals.', g: 'First I listen. Tell us how your business runs today.' },
+      { t: 'Analyze', d: 'Identify repetitive processes and opportunities for automation.', g: 'Now I look for the tasks that repeat again and again.' },
+      { t: 'Design', d: 'Design a system tailored to your business needs.', g: 'Here we shape a solution that fits you, not a template.' },
+      { t: 'Build & Integrate', d: 'Develop the solution and connect the required tools.', g: 'This is where the pieces connect and start working together.' },
+      { t: 'Launch & Support', d: 'Deploy, test, optimize, and provide ongoing support.', g: 'Launch day! We stay with you after it goes live.' },
+    ],
+  },
+  why: {
+    eyebrow: 'Why Autoone', title: 'Less Manual Work. More Growth.',
+    sub: 'What changes when repetitive work runs by itself.',
+    bubble: 'Less typing. More growing.',
+    items: [
+      { t: 'Save Time', d: 'Hours of routine work disappear from your week.' },
+      { t: 'Improve Efficiency', d: 'Every process follows the same clear steps, every time.' },
+      { t: 'Better Customer Experience', d: 'Customers get answers and confirmations without waiting.' },
+      { t: 'Reduce Repetitive Work', d: 'Your team stops copying, pasting and chasing.' },
+      { t: 'Faster Responses', d: 'Requests are handled in seconds, day or night.' },
+      { t: 'Connected Systems', d: 'Your tools share data instead of working in silos.' },
+      { t: 'Scalable Solutions', d: 'Handle more customers without hiring for every task.' },
+      { t: 'Smarter Operations', d: 'Clear data and live reports help you decide faster.' },
+    ],
+  },
+  who: {
+    eyebrow: 'Who we help', title: 'Built for businesses like yours.',
+    sub: 'Examples of what automation can do in different industries. These are practical ideas, not client case studies.',
+    items: [
+      { t: 'Clinics', d: 'Patients book, receive reminders and get answers about hours and services without calling the front desk.' },
+      { t: 'Restaurants', d: 'Reservations and common questions are handled on WhatsApp, and the kitchen is notified of orders.' },
+      { t: 'Online stores', d: 'A chatbot answers product and delivery questions and keeps customers updated on their orders.' },
+      { t: 'Service businesses', d: 'Quote requests are collected, qualified and sent to the right person automatically.' },
+      { t: 'Real estate companies', d: 'Inquiries are answered instantly, viewings are booked and new leads reach the agent with full details.' },
+      { t: 'Offices', d: 'Invoices, documents and internal requests move through approvals without anyone chasing them.' },
+      { t: 'Educational institutions', d: 'Enrollment questions, class schedules and parent reminders are sent automatically.' },
+      { t: 'Social media management', d: 'Posts are scheduled, comments and messages are answered, and reports are prepared automatically.' },
+      { t: 'Content creators', d: 'Ideas, scripts and posting schedules stay organized, and followers get instant replies to their questions.' },
+      { t: 'Small & medium businesses', d: 'Connect the tools you already use so daily admin runs by itself.' },
+    ],
+  },
+  team: {
+    eyebrow: 'Our team', title: 'The people behind the systems.',
+    sub: 'A small team that cares about making your work easier.', linkedin: 'LinkedIn profile of', instagram: 'Instagram of', x: 'X profile of',
+  },
+  tech: {
+    eyebrow: 'Tech & systems', title: 'Connected systems, not one tool.',
+    sub: 'We choose the right technology for each project and connect it into a single working system.',
+    note: 'Technology is selected per project. We do not tie you to one platform.',
+    groups: [
+      { t: 'Artificial Intelligence', items: ['Language understanding', 'Intent detection', 'Document reading'] },
+      { t: 'Workflow Automation', items: ['Triggers and schedules', 'Approvals', 'Error handling'] },
+      { t: 'AI Agents', items: ['Task agents', 'Tool use', 'Human handover'] },
+      { t: 'APIs', items: ['REST and webhooks', 'Custom integrations'] },
+      { t: 'CRM Systems', items: ['Lead pipelines', 'Customer records'] },
+      { t: 'Cloud Services', items: ['Secure hosting', 'Backups', 'Monitoring'] },
+      { t: 'Data Processing', items: ['Cleaning and syncing', 'Reports and dashboards'] },
+      { t: 'Messaging Platforms', items: ['WhatsApp', 'Website chat', 'Email'] },
+      { t: 'Voice AI', items: ['Speech recognition', 'Natural voice replies', 'Call routing'] },
+    ],
+  },
+  faq: {
+    eyebrow: 'FAQ', title: 'Questions, answered simply.',
+    hints: ['Good question!', 'Let me think...', 'Happy to help!', 'Yes, that is possible.', 'Great one to ask.', 'We connect it all.', 'Plans vary a lot.', 'We stay with you.'],
+    items: [
+      { q: 'What is business automation?', a: 'It means letting software do the repetitive parts of your work, such as answering common questions, booking appointments, sending reminders or moving data between tools, so your team does not have to do them by hand.' },
+      { q: 'How can automation help my business?', a: 'It saves time, reduces mistakes, speeds up replies to customers and lets your team focus on work that needs a person. Most businesses start with one repetitive task and grow from there.' },
+      { q: 'Can you build a solution specifically for my business?', a: 'Yes. We start by understanding how your business works, then design the system around your tools, your rules and your customers. Nothing is copied from a template.' },
+      { q: 'Can AI answer my customers?', a: 'Yes. An AI assistant can answer common questions on your website, WhatsApp or by phone, using information you approve. When a question needs a person, it hands the conversation to your team.' },
+      { q: 'Can you automate WhatsApp?', a: 'Yes, where the platform allows it. We can set up automatic replies, collect customer details, send confirmations and reminders, and notify your team. Some features depend on WhatsApp Business rules.' },
+      { q: 'Can you connect my existing systems?', a: 'In most cases, yes. If your tools have an API or an integration option, we can connect them. During discovery we check what is possible before you commit.' },
+      { q: 'How long does it take to build a system?', a: 'It depends on the size of the project. A focused automation can be ready in a short time, while a connected system with several tools takes longer. We give you a clear estimate after we understand your needs.' },
+      { q: 'Do you provide technical support after launch?', a: 'Yes. We test and tune the system after launch and you can send support requests, report a problem or ask for an update at any time using the support form on this page.' },
+    ],
+  },
+  forms: {
+    required: 'Required', optional: 'Optional', sending: 'Sending...', retry: 'Try again',
+    errors: {
+      required: 'Please fill in this field.', email: 'Enter a valid email address.', phone: 'Enter a valid phone number.',
+      min: 'Please write a little more (at least 20 characters).', file: 'This file is too large. Maximum size is 3 MB.',
+      network: 'We could not send your message. Check your connection and try again.',
+      server: 'Something went wrong on our side. Please try again in a moment.',
+      notConfigured: 'Our form is not connected yet. Please email us directly at',
+      rate: 'Too many requests. Please wait a minute and try again.',
+    },
+  },
+  contact: {
+    eyebrow: 'Start your project', title: 'Tell Us What You Need.',
+    sub: "You don't need to know how automation works. Simply explain your problem, and our team will help you identify the right solution.",
+    fields: {
+      name: 'Full name', company: 'Company name', email: 'Email address', phone: 'Phone number', industry: 'Industry',
+      service: 'Service needed', method: 'Preferred contact method', budget: 'Project budget', message: 'Describe the problem you want to solve',
+    },
+    placeholder: 'Tell us about the tasks you repeat every day, the problems your business faces, or what you would like to automate...',
+    select: 'Select an option',
+    industries: ['Clinic or healthcare', 'Restaurant or food', 'Online store', 'Service business', 'Real estate', 'Office or professional services', 'Education', 'Other'],
+    services: { call: 'AI Call Center', assistant: 'Personal Assistant', booking: 'Booking & Scheduling', chatbot: 'Chatbot', systems: 'Smart Systems', automation: 'Workflow Automation', unsure: 'Not Sure Yet' },
+    methods: { email: 'Email', phone: 'Phone call', whatsapp: 'WhatsApp' },
+    budgets: ['Not sure yet', 'Under $500', '$500 – $2,000', '$2,000 – $5,000', 'Above $5,000'],
+    submit: 'Send request',
+    privacy: 'We only use your details to reply to your request.',
+    guide: {
+      idle: 'Tell me what slows your business down. Even a rough idea is enough.',
+      name: 'Nice to meet you!', company: 'Which business are we helping?', email: 'Where should we reply?', phone: 'Optional, only if you prefer a call.',
+      industry: 'This helps us think of examples that fit you.', service: 'Not sure? Choose "Not Sure Yet", we will guide you.',
+      method: 'How do you like to be contacted?', budget: 'Optional. It just helps us plan realistic options.',
+      message: 'This is the most important part. Describe what you repeat every day.',
+      loading: 'Sending your request...', success: 'Done! We received your request.', error: 'Oops. Something did not work. Let us try again.',
+    },
+    successTitle: 'Request received', successText: 'Thank you. Our team will review your request and reply by email as soon as possible.', another: 'Send another request',
+  },
+  support: {
+    eyebrow: 'Technical support', title: "Need Help? We're Here.",
+    sub: 'Already using an Autoone system? Tell us what happened and we will get back to you.',
+    actions: [
+      { k: 'support', t: 'Request Technical Support', d: 'Something needs our attention.' },
+      { k: 'problem', t: 'Report a Problem', d: 'Tell us what is not working.' },
+      { k: 'maintenance', t: 'System Maintenance Request', d: 'Check-ups and tuning.' },
+      { k: 'update', t: 'Request an Update', d: 'Change or extend your system.' },
+      { k: 'contact', t: 'Contact Support', d: 'Ask a general question.' },
+    ],
+    fields: { name: 'Customer name', company: 'Company', email: 'Email address', system: 'System / service', type: 'Problem type', urgency: 'Urgency', description: 'Problem description', attachment: 'Attachment' },
+    descPlaceholder: 'What happened? What did you expect? When did it start?',
+    systems: ['AI Call Center', 'Personal Assistant', 'Booking & Scheduling', 'Chatbot', 'Smart Systems', 'Workflow Automation', 'Other'],
+    types: ['System not working', 'Error or unexpected behavior', 'Request a modification', 'General assistance', 'Integration issue', 'Other'],
+    urgencies: { low: 'Low', medium: 'Medium', high: 'High', critical: 'Critical' },
+    attachHint: 'Optional. Screenshots, PDF or text files, up to 3 MB.', chooseFile: 'Choose file', remove: 'Remove',
+    submit: 'Send support request',
+    guide: {
+      idle: 'Something not working? I will help you tell the team exactly what happened.',
+      loading: 'Sending your request...', success: 'Got it! Our team will look into it.', error: 'That did not go through. Please try again.',
+    },
+    successTitle: 'Support request received', successText: 'Thank you. We will review your request and reply by email. Critical issues are looked at first.', another: 'Send another request',
+  },
+  info: {
+    eyebrow: 'Contact', title: 'Reach us directly.',
+    email: 'Email', whatsapp: 'WhatsApp', phone: 'Phone', instagram: 'Instagram', linkedin: 'LinkedIn', location: 'Location',
+    soon: 'Coming soon', copy: 'Copy', copied: 'Copied',
+  },
+  footer: {
+    desc: 'We build intelligent systems that make businesses work smarter.',
+    explore: 'Explore', services: 'Services', support: 'Support', contact: 'Contact', rights: 'All rights reserved.',
+    toTop: 'Back to top',
+  },
+  guide: {
+    open: 'Open guide', close: 'Hide guide',
+    tips: {
+      hero: 'Welcome! Scroll down and I will show you around.',
+      services: 'Tap any service to see how it works.',
+      how: 'Five simple steps from problem to solution.',
+      why: 'This is what changes when work runs itself.',
+      who: 'Find your type of business here.',
+      team: 'The people who will build your system.',
+      tech: 'We connect many tools into one system.',
+      faq: 'Quick answers to common questions.',
+      contact: 'Tell us your problem. No technical words needed.',
+      support: 'Need help with a system? Start here.',
+    },
+  },
+}
+
+export type Dict = typeof en

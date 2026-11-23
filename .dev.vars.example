@@ -1,0 +1,7 @@
+# Local testing only: copy to ".dev.vars" (git-ignored) and run:  npm run build && npx wrangler pages dev dist
+# In production set the SAME names in Cloudflare: Workers & Pages > your project > Settings > Variables and Secrets.
+RESEND_API_KEY=
+MAIL_FROM=Autoone <no-reply@autoone.ps>
+CONTACT_TO_EMAIL=autoone.ps@gmail.com
+SUPPORT_TO_EMAIL=
+ALLOWED_ORIGIN=https://autoone.ps
