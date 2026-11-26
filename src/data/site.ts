@@ -25,7 +25,7 @@ export const site: SiteSettings = {
   /** WhatsApp number, digits only with country code (e.g. '970599123456'). Empty = hidden link. */
   whatsapp: '970594079502',
   /** Phone number in international format (e.g. '+970 59 912 3456'). */
-  phone: '',
+  phone: '0594079502',
   /** Full URLs, e.g. 'https://instagram.com/yourhandle'. */
   instagram: 'https://instagram.com/auto_.one',
   linkedin: '',
