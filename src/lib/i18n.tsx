@@ -32,6 +32,8 @@ export function LangProvider({ children }: { children: ReactNode }) {
     document.documentElement.lang = lang
     document.documentElement.dir = dir
     document.title = dicts[lang].meta.title
+    document.querySelector('meta[name="description"]')?.setAttribute('content', dicts[lang].meta.description)
+    document.querySelector('meta[property="og:locale"]')?.setAttribute('content', lang === 'ar' ? 'ar_AR' : 'en_US')
     try { localStorage.setItem(KEY, lang) } catch { /* ignore */ }
   }, [lang, dir])
 

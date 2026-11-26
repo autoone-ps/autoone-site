@@ -12,7 +12,10 @@ interface ServiceText {
 }
 
 export const en = {
-  meta: { title: 'Autoone | AI Automation & Smart Systems for Businesses' },
+  meta: {
+    title: 'Autoone | AI Automation & Smart Systems for Businesses',
+    description: 'Autoone builds AI call centers, assistants, chatbots, smart booking and workflow automation that save businesses time and improve customer experience.',
+  },
   skip: 'Skip to content',
   nav: {
     services: 'Services', how: 'How we work', why: 'Why Autoone', who: 'Who we help', team: 'Team',

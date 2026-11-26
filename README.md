@@ -52,6 +52,14 @@ Images in `src/assets/mascot/` come from the supplied character renders. Each po
 picks the right size for the screen. `src/data/mascot-meta.json` stores the eye positions used for the blink. High-resolution poses currently in use: wave, point, think, celebrate.
 The first pose (`main`) and the small faces (`f-*`) are older, lower-resolution cuts; replace them with the same file names when better renders are available.
 
+## Social preview, icons and security headers
+
+- `public/og-image.png` (1200x630) is the image shown when the link is shared on WhatsApp, Facebook, LinkedIn, X. Platforms cache it: after changing it, refresh the cache with the Facebook Sharing Debugger.
+- `public/favicon.svg`, `icon-192.png`, `icon-512.png`, `apple-touch-icon.png` and `site.webmanifest` are the browser/phone icons.
+- The page title and description switch between English and Arabic with the language button (`meta` in `src/i18n/*.ts`). There is one URL for both languages, so no `hreflang` tags are set.
+- `public/_headers` sets security headers including a Content-Security-Policy. If you add a third-party script (analytics, chat widget, Turnstile) or image host, add its domain to the matching directive there, or the browser will block it.
+- Update `<lastmod>` in `public/sitemap.xml` when the content changes.
+
 ## Notes
 
 - `npm run build:preview` makes one self-contained HTML file in `dist-preview/` for quick sharing. Forms cannot reach `/api` there.
