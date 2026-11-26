@@ -1,4 +1,4 @@
-import { Instagram, Linkedin, Twitter, UserRound } from 'lucide-react'
+import { Instagram, Linkedin, Mail, Phone, Twitter, UserRound } from 'lucide-react'
 import { team } from '../data/team'
 import { useLang } from '../lib/i18n'
 import { Reveal, SectionHead } from './Reveal'
@@ -35,6 +35,26 @@ export function Team() {
                     <ul className="mt-6 flex flex-wrap gap-2">
                       {m.expertise[lang].map((e) => <li key={e} className="rounded-full border border-mist/15 px-3 py-1 text-sm text-mist/80">{e}</li>)}
                     </ul>
+                    {(m.phone || m.email) && (
+                      <ul className="mt-6 space-y-2 border-t border-mist/10 pt-5 text-[15px]">
+                        {m.phone && (
+                          <li>
+                            <a href={`tel:${m.phone.replace(/[^\d+]/g, '')}`} className="flex items-center gap-3 text-mist/80 transition hover:text-white">
+                              <Phone size={16} aria-hidden="true" className="shrink-0 text-electric" />
+                              <span dir="ltr">{m.phone}</span>
+                            </a>
+                          </li>
+                        )}
+                        {m.email && (
+                          <li>
+                            <a href={`mailto:${m.email}`} className="flex items-center gap-3 text-mist/80 transition hover:text-white">
+                              <Mail size={16} aria-hidden="true" className="shrink-0 text-electric" />
+                              <span dir="ltr" className="min-w-0 break-all">{m.email}</span>
+                            </a>
+                          </li>
+                        )}
+                      </ul>
+                    )}
                     {socials.length > 0 && (
                       <div className="mt-6 flex gap-2">
                         {socials.map(({ url, Icon, label }) => (
