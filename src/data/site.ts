@@ -23,11 +23,11 @@ export const site: SiteSettings = {
   email: 'autoone.ps@gmail.com',
 
   /** WhatsApp number, digits only with country code (e.g. '970599123456'). Empty = hidden link. */
-  whatsapp: '',
+  whatsapp: '970594079502',
   /** Phone number in international format (e.g. '+970 59 912 3456'). */
   phone: '',
   /** Full URLs, e.g. 'https://instagram.com/yourhandle'. */
-  instagram: '',
+  instagram: 'https://instagram.com/auto_.one',
   linkedin: '',
   /** Physical location, per language. */
   location: { en: '', ar: '' },
